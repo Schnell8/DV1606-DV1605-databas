@@ -1,0 +1,27 @@
+<%- include("header", {title: title}); %>
+
+<h1>Ordrar</h1>
+
+<p>Här kan du se en tabell över alla ordrar.</p>
+
+<table>
+    <tr>
+        <th>Ordernummer</th>
+        <th>Datum</th>
+        <th>Kundnummer</th>
+        <th>Antal produkter</th>
+        <th>Status</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><a href="/eshop/order/view/<%= row.ordernummer %>"><%= row.ordernummer %></a></td>
+        <td><%= row.datum %></td>
+        <td><%= row.kundnummer %></td>
+        <td><%= row.orderrader %></td>
+        <td><%= row.status %></td>
+        <td><a href="/eshop/order/add-products/<%= row.ordernummer %>">Lägg till produkt</a></td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

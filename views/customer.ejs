@@ -1,0 +1,25 @@
+<%- include("header", {title: title}); %>
+
+<h1>Kunder</h1>
+
+<p>Här kan du se en tabell över våra kunder.</p>
+
+<table>
+    <tr>
+        <th>Kundnummer</th>
+        <th>Namn</th>
+        <th>Stad</th>
+        <th>Telefon</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.kundnummer %></td>
+        <td><%= row.namn %></td>
+        <td><%= row.stad %></td>
+        <td><%= row.telefon %></td>
+        <td><a href="/eshop/order/create/<%= row.kundnummer %>">Skapa order</a></td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

@@ -1,0 +1,27 @@
+<%- include("header", {title: title}); %>
+
+<h1>Skapa order</h1>
+
+<p>Här kan du skapa en ny order.</p>
+
+<% res = res[0] %>
+<form class="label-left" method="post" action="/eshop/order/create">
+    <fieldset>
+
+        <label for="kundnummer">Kundnummer</label>
+        <input id="kundnummer" type="text" name="kundnummer" readonly value="<%= res.kundnummer %>">
+
+        <label for="namn">Namm</label>
+        <input id="namn" type="text" name="namn" readonly value="<%= res.namn %>">
+
+        <label for="stad">Stad</label>
+        <input id="stad" type="text" name="stad" readonly value="<%= res.stad %>">
+
+        <label for="telefon">Telefon</label>
+        <input id="telefon" type="text" name="telefon" readonly value="<%= res.telefon %>">
+
+        <input type="submit" name="doit" value="Skapa ny order">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

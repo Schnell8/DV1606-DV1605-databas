@@ -1,0 +1,42 @@
+body {
+    margin: 8px auto;
+    background: #fff;
+    width: 859px;
+}
+
+header {
+    background-color: #ddd;
+    padding: 1em;
+}
+
+footer {
+    background-color: #666;
+    color: #fff;
+    padding: 1em;
+}
+
+table {
+    border: 1px solid #ccc;
+    margin-bottom: 18px;
+}
+
+th {
+    text-align: left;
+    border-bottom: 1px solid #999;
+}
+
+td {
+    padding: 0.2em;
+}
+
+.right {
+    text-align: right;
+}
+
+tr:hover {
+    background-color: #eee;
+}
+
+label {
+    display: block;
+}

@@ -1,0 +1,34 @@
+<%- include("header", {title: title}); %>
+
+<h1>Enskild produkt</h1>
+
+<p>Här kan du se en tabell över den enskilda produkten.</p>
+
+<table>
+    <tr>
+        <th>Produktkod</th>
+        <th>Namn</th>
+        <th>Beskrivning</th>
+        <th>Pris</th>
+        <th>Antal</th>
+        <th>Kategori</th>
+        <th>Action</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.produktkod %></td>
+        <td><%= row.namn %></td>
+        <td><%= row.beskrivning %></td>
+        <td><%= row.pris %></td>
+        <td><%= row.antal %></td>
+        <td><%= row.kategori %></td>
+        <td>
+            <a href="/eshop/product/edit/<%= row.produktkod %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <a href="/eshop/product/delete/<%= row.produktkod %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+
+<%- include("footer"); %>

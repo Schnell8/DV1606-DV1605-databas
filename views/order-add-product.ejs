@@ -1,0 +1,29 @@
+<%- include("header", {title: title, ordernummer: ordernummer}); %>
+
+<h1>Lägg till produkt</h1>
+
+<p>Här kan du lägga till produkter för order "<%= ordernummer %>".</p>
+
+<% res = res[0] %>
+<form class="label-left" method="post" action="/eshop/order/add-product">
+    <fieldset>
+        <label for="ordernummer">Ordernummer</label>
+        <input id="ordernummer" type="text" name="ordernummer" readonly value="<%= ordernummer %>">
+
+        <label for="produktkod">Produktkod</label>
+        <select name="produktkod" id="produktkod">
+            <option value="kaffe1">Kaffe1</option>
+            <option value="kaffe2">Kaffe2</option>
+            <option value="te1">Te1</option>
+            <option value="te2">Te2</option>
+            <option value="2-in-1">2-in-1</option>
+        </select>
+
+        <label for="antal">Antal</label>
+        <input id="antal" type="number" name="antal" min="1" max ="50" value="">
+
+        <input type="submit" name="doit" value="Lägg till produkt">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

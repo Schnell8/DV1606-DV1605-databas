@@ -1,0 +1,7 @@
+{
+    "host":     "LAPTOP-VTCIFJJ4.local",
+    "user":     "maria",
+    "password": "P@ssw0rd",
+    "database": "eshop",
+    "multipleStatements": true
+}

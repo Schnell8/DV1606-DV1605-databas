@@ -1,0 +1,18 @@
+<%- include("header", {title: title}); %>
+
+<h1>Kategorier</h1>
+
+<p>Här kan du se en tabell över de kategorier som finns.</p>
+
+<table>
+    <tr>
+        <th>Kategori</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.kategori %></a></td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

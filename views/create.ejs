@@ -1,0 +1,34 @@
+<%- include("header", {title: title}); %>
+
+<h1>Skapa produkt</h1>
+
+<p>Här kan du lägga till en produkt via formuläret nedan.</p>
+
+<form class="label-left" method="post">
+    <fieldset>
+        <legend>Lägg till produkt</legend>
+
+        <label for="produktkod">Produktkod</label>
+        <input id="produktkod" type="text" name="produktkod">
+
+        <label for="namn">Namn</label>
+        <input id="namn" type="text" name="namn">
+
+        <label for="beskrivning">Beskrivning</label>
+        <input id="beskrivning" type="text" name="beskrivning">
+
+        <label for="pris">Pris</label>
+        <input id="pris" type="number" name="pris">
+
+        <label for="antal">Antal</label>
+        <input id="antal" type="number" name="antal">
+
+        <label for="kategori">Kategori</label>
+        <input id="kategori" type="text" name="kategori">
+
+        <input type="submit" name="doit" value="Lägg till produkt">
+    </fieldset>
+</form>
+
+
+<%- include("footer"); %>

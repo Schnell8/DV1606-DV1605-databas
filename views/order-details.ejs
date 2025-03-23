@@ -1,0 +1,34 @@
+<%- include("header", {title: title, ordernummer: ordernummer}); %>
+
+<h1>Enskild order</h1>
+
+<p>Ordernummer: <%= ordernummer %></p>
+<p>Orderrader: <%= res.length %></p>
+<p>Status: <%= res[0].status %></p>
+
+<table>
+    <tr>
+        <th>Produktkod</th>
+        <th>Produktnamn</th>
+        <th>Antal</th>
+        <th>Pris</th>
+        <th>Summa</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.produkt_id %></td>
+        <td><%= row.namn %></td>
+        <td><%= row.antal %></td>
+        <td><%= row.pris %></td>
+        <td><%= row.summa %></td>
+    </tr>
+<% }; %>
+</table>
+
+<form class="label-left" method="post" action="/eshop/order/bestall">
+    <input id="ordernummer" type="ordernummer" name="ordernummer" readonly value="<%= ordernummer %>">
+    <input type="submit" name="doit" value="Beställ">
+</form>
+
+
+<%- include("footer"); %>
